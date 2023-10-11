@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Test"
         tools:targetApi="31">
         <activity
+            android:name=".Show"
+            android:exported="false" />
+        <activity
             android:name=".InsertActivity"
             android:exported="false" />
         <activity
