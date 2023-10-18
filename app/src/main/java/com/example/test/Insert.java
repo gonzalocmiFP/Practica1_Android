@@ -49,6 +49,8 @@ public class Insert extends AppCompatActivity {
                 Toast.makeText(this, "Fallo al insertar", Toast.LENGTH_LONG).show();
             }
             db.close();
+        } else {
+            Toast.makeText(this, "Fallo al insertar", Toast.LENGTH_LONG).show();
         }
     }
 }
