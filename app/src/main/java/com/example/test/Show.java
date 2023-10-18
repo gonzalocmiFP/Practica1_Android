@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.test.Database.DatabaseAux;
@@ -30,16 +31,17 @@ public class Show extends AppCompatActivity {
         SQLiteDatabase db = new DatabaseAux(this).getReadableDatabase();
 
         Cursor cursor = db.rawQuery("SELECT * FROM users", null);
-        TextView showNameView = findViewById(R.id.showName);
-        TextView showEmailView = findViewById(R.id.showEmail);
+        LinearLayout layout = findViewById(R.id.fillContentShow);
+
         if (cursor.moveToFirst()) {
             do {
                 int id = cursor.getInt(0);
                 String name = cursor.getString(1);
                 String email = cursor.getString(2);
 
-                showNameView.setText(id + " " + name);
-                showEmailView.setText(email);
+                TextView data = new TextView(this);
+                data.setText("Nombre: " + name + "\nEmail: " + email + "\n");
+                layout.addView(data);
             } while (cursor.moveToNext());
         }
         db.close();

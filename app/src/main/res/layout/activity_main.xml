@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="255dp" />
+        app:layout_constraintGuide_percent="0.77" />
 
     <Button
         android:id="@+id/botonprincipal"
@@ -48,10 +48,10 @@
         android:text="Hola"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203" />
+        app:layout_constraintVertical_bias="0.226" />
 
     <Button
         android:id="@+id/botonInsertar"
@@ -62,15 +62,15 @@
         android:text="Insertar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.587" />
+        app:layout_constraintVertical_bias="0.635" />
 
     <EditText
         android:id="@+id/editTextText"
-        android:layout_width="238dp"
-        android:layout_height="116dp"
+        android:layout_width="192dp"
+        android:layout_height="77dp"
         android:ems="10"
         android:inputType="text"
         android:text="Name"
@@ -80,20 +80,20 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline1"
-        app:layout_constraintVertical_bias="0.328" />
+        app:layout_constraintVertical_bias="0.289" />
 
     <Button
         android:id="@+id/botonBorrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="94dp"
+        android:layout_height="49dp"
         android:onClick="changeToDelete"
         android:text="Borrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619" />
+        app:layout_constraintVertical_bias="0.664" />
 
     <Button
         android:id="@+id/botonMostrar"
@@ -103,9 +103,9 @@
         android:text="Mostrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintHorizontal_bias="0.861"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619" />
+        app:layout_constraintVertical_bias="0.664" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
