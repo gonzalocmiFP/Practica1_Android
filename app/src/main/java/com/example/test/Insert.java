@@ -6,14 +6,13 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.TextureView;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.test.Database.DatabaseAux;
 
-public class InsertActivity extends AppCompatActivity {
+public class Insert extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +21,7 @@ public class InsertActivity extends AppCompatActivity {
     }
 
     public void changeToMain(View view) {
-        Intent nIntent = new Intent(InsertActivity.this, MainActivity.class);
+        Intent nIntent = new Intent(Insert.this, MainActivity.class);
         startActivity(nIntent);
     }
 
@@ -33,7 +32,7 @@ public class InsertActivity extends AppCompatActivity {
         String nameString = nameTextView.getText().toString();
         String emailString = emailTextView.getText().toString();
 
-        DatabaseAux aux = new DatabaseAux(InsertActivity.this);
+        DatabaseAux aux = new DatabaseAux(Insert.this);
         SQLiteDatabase db = aux.getWritableDatabase();
 
         if (db != null && !nameString.isEmpty() && !emailString.isEmpty()) {

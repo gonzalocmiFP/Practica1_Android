@@ -42,7 +42,6 @@ public class Show extends AppCompatActivity {
                 showEmailView.setText(email);
             } while (cursor.moveToNext());
         }
-
         db.close();
     }
 }
