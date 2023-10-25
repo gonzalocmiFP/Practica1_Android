@@ -1,16 +1,25 @@
 package com.example.test;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.test.Database.DatabaseAux;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class Insert extends AppCompatActivity {
 
@@ -52,5 +61,25 @@ public class Insert extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Fallo al insertar", Toast.LENGTH_LONG).show();
         }
+
+        FirebaseFirestore firestoreDb = FirebaseFirestore.getInstance();
+        Map<String, String> users = new HashMap<>();
+        users.put("email", nameString);
+        users.put("name", emailString);
+
+        firestoreDb.collection("2DAM").document(nameString)
+                .set(users)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Log.d("DEBUG", "TODO OK");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d("ERROR", e.getMessage());
+                    }
+                });
     }
 }

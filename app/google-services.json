@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "369582104690",
+    "project_id": "dam-cf0d5",
+    "storage_bucket": "dam-cf0d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369582104690:android:5e08cf8c362862b2e4e2eb",
+        "android_client_info": {
+          "package_name": "com.example.foodpoint"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhRZODts5wTxBBWaW9IONDwa8kTJt4BeY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
