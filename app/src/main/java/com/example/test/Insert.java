@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.example.test.Database.DatabaseAux;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -63,9 +65,11 @@ public class Insert extends AppCompatActivity {
         }
 
         FirebaseFirestore firestoreDb = FirebaseFirestore.getInstance();
-        Map<String, String> users = new HashMap<>();
-        users.put("email", nameString);
-        users.put("name", emailString);
+        Map<String, User> users = new HashMap<>();
+        User u1 = new User();
+        u1.name = nameString;
+        u1.email = emailString;
+        users.put(nameString, u1);
 
         firestoreDb.collection("2DAM").document(nameString)
                 .set(users)
@@ -79,6 +83,17 @@ public class Insert extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.d("ERROR", e.getMessage());
+                    }
+                });
+
+        firestoreDb.collection("2DAM").document(nameString)
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot>) {
+                        if (task.isSuccessful) {
+
+                        }
                     }
                 });
     }
